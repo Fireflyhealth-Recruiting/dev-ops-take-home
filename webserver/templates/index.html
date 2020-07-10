@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pick An Appointment!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="container">
+    {% include 'set-name.html' with context %}
+    {% if error %}
+    <pre><code>{{error}}</code></pre>
+    {% endif %}
+    {% if owner %}
+    {% include 'cancel-appointments.html' with context %}
+    <br />
+    {% include 'create-appointment.html' with context %}
+    {% endif %}
+  </div>
+</body>
+
+</html>

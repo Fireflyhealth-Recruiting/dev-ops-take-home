@@ -1,0 +1,29 @@
+{% if appointments %}
+<form id="cancel-appointments" method="post">
+    <input type="hidden" name="action" value="cancel-appointments" />
+    <input type="hidden" name="owner" value="{{owner}}" />
+    <input type="hidden" name="admin" value="{{admin}}" />
+</form>
+<h5>Appointments</h5>
+<table class="u-full-width">
+    <thead>
+        <th>Date</th>
+        <th>Owner</th>
+        <th>Notes</th>
+        <th>Cancel Appointment</th>
+    </thead>
+    {% for appointment in appointments %}
+    <tr>
+        <td>{{ appointment.date | date_to_string }}</td>
+        <td>{{ appointment.owner }}</td>
+        <td>{{ appointment.notes or '-' }}</td>
+        <td>
+            <input type="checkbox" name="{{appointment.date}}" form="cancel-appointments" />
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<input type="submit" value="Cancel Selected Appointments" form="cancel-appointments" />
+{% else %}
+<em> no appointments found</em>
+{% endif %}

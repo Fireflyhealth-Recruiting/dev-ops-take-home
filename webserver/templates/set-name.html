@@ -1,0 +1,21 @@
+<form id="set-name" method="post">
+  <input type="hidden" name="action" value="set-name" />
+</form>
+<table class="u-full-width">
+  <tbody>
+    <tr>
+      <td>
+        <label for="owner">name</label>
+        <input form="set-name" type="text" name="owner" value="{{owner}}" pattern="[a-z]+"
+          title="Name should only contain lowercase letters" />
+      </td>
+      <td>
+        <label for="admin">Admin</label>
+        <input form="set-name" type="checkbox" name="admin" {% if admin %} checked {% endif %} />
+      </td>
+      <td>
+        <input form="set-name" type="submit" value="refresh appointments" />
+      </td>
+    </tr>
+  </tbody>
+</table>

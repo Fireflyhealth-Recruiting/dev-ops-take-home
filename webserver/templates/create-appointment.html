@@ -1,0 +1,17 @@
+<form id="create-appointment" method="post">
+  <input type="hidden" name="action" value="create-appointment" />
+  <input type="hidden" name="owner" value="{{owner}}" />
+  <input type="hidden" name="admin" value="{{admin}}" />
+</form>
+<h5>
+  Create Appointment </h5>
+<label for="date">
+  Date </label>
+<input id="date" type="date" name="date" form="create-appointment" />
+<label for="notes">
+  Notes </label>
+<textarea name="notes" cols="30" rows="10" form="create-appointment">
+      </textarea>
+<br />
+<input type="submit" value="Create" form="create-appointment" /></label></label>
+</h5>
